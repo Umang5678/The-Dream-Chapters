@@ -1,103 +1,322 @@
+"use client";
+
+import React, { useState } from "react";
+import Hero from "@/components/Hero/Hero";
 import Image from "next/image";
+import contact from "@/app/contact/page";
+import { Instagram } from "lucide-react";
+import WhatWeDo from "@/components/WhatWeDo";
+import EventsAndOffers from "@/components/EventsAndOffers";
+import Footer from "@/components/Footer/Footer";
+import About from "@/app/About/page"
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    }, 1500);
+  };
+
+  return (
+    <div className="min-h-screen">
+      {/* <Hero
+        title="Relax & Celebrate:The Ultimate Event Experience"
+        backgroundImage="/images/hero.jpg"
+      /> */}
+      <Hero
+        title="Relax & Celebrate: The Ultimate Event Experience"
+        backgroundImages={[
+          "/images/12.JPG",
+          "/images/11.JPEG",
+          "/images/14.JPEG",
+        ]}
+      />
+
+      <WhatWeDo />
+
+     
+
+    <section
+  className="py-20 px-4"
+  style={{ backgroundColor: "rgb(215, 217, 206)" }}
+>
+  <div className="container mx-auto">
+    <h1
+      className="text-center mb-4 text-black font-bold"
+      style={{ fontFamily: "Playfair Display", fontSize: "37px" }}
+    >
+      Types Of Event
+    </h1>
+
+    <p className="text-base mb-12 text-center text-gray-700 max-w-2xl mx-auto">
+      From intimate gatherings to grand celebrations, we bring your dream event
+      to life with creativity, precision, and passion.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        {
+          title: "Social Event",
+          desc: "Wedding, Birthday, Baby Shower, Anniversary, House Warming, Reunion Party, Festival Celebration and much more...",
+          img: "/images/31.jpg",
+        },
+        {
+          title: "Corporate Event",
+          desc: "Conference, Product Launch, Exhibition, Dealer Meet, Motivational Activity, Award Function, and much more...",
+          img: "/images/30.jpg",
+        },
+        {
+          title: "Wedding",
+          desc: "Destination Wedding, Ring Ceremony, Reception, Haldi, Bachelor Party, Sangeet Sandhya, Mayra, and much more...",
+          img: "/images/32.jpg",
+        },
+      ].map((card, i) => (
+        <div
+          key={i}
+          className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+        >
+          {/* Image */}
+          <img
+            src={card.img}
+            alt={card.title}
+            className="w-full h-96 object-cover transform md:group-hover:scale-110 transition duration-700 ease-in-out"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-all duration-500 md:group-hover:from-black/90"></div>
+
+          {/* Text content */}
+          <div className="absolute inset-x-0 bottom-0 text-center text-white p-6 pb-10 transition-all duration-700">
+            {/* Title */}
+            <h3
+              className="text-2xl font-bold transition-all duration-700 transform md:group-hover:-translate-y-12 md:group-hover:text-purple-300"
+              style={{ fontFamily: "Playfair Display", fontSize: "34px" }}
+            >
+              {card.title}
+            </h3>
+
+            {/* Description */}
+            <p
+              className="text-sm mt-3 leading-relaxed max-w-xs mx-auto transition-all duration-700 
+              opacity-100 translate-y-2 
+              md:opacity-0 md:translate-y-0 
+              md:group-hover:opacity-100 md:group-hover:translate-y-2"
+            >
+              {card.desc}
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
+      {/* Photo Gallery Section */}
+
+    <section
+      id="gallery"
+      className="relative py-20 px-4 sm:px-6 bg-center bg-cover sm:bg-fixed overflow-hidden"
+      style={{ backgroundImage: "url('/images/67.jpg')" }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      <div className="relative max-w-7xl mx-auto">
+        {/* Section Heading */}
+        {/* <h2 className="text-center text-white font-playfair font-bold text-5xl mb-12 relative after:content-[''] after:block after:w-24 after:h-[3px] after:bg-[#d4a5b2] after:mx-auto after:mt-4">
+          Photo Gallery
+        </h2> */}
+
+        {/* Masonry-like Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {/* Large Image */}
+          <div className="row-span-2">
+            <Image
+              src="/images/18.jpg"
+              alt="Gallery 1"
+              width={600}
+              height={800}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/co.jpg"
+            />
+          </div>
+
+          <div>
+            <Image
+              src="/images/16.jpg"
+              alt="Gallery 2"
+              width={600}
+              height={400}
+              className="w-full h-80 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/1.jpg"
+            />
+          </div>
+
+          <div>
+            <Image
+              src="/images/31.jpg"
+              alt="Gallery 3"
+              width={600}
+              height={400}
+              className="w-full h-80 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/2.jpg"
+            />
+          </div>
+
+          <div className="col-span-2">
+            <Image
+              src="/images/17.jpg"
+              alt="Gallery 4"
+              width={1200}
+              height={600}
+              className="w-full h-96 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/3.jpg"
+            />
+          </div>
+
+          <div>
+            <Image
+              src="/images/23.jpg"
+              alt="Gallery 5"
+              width={600}
+              height={500}
+              className="w-full h-96 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/1.jpg"
+            />
+          </div>
+
+          <div>
+            <Image
+              src="/images/19.jpg"
+              alt="Gallery 6"
+              width={600}
+              height={500}
+              className="w-full h-96 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/2.jpg"
+            />
+          </div>
+
+          <div className="row-span-2">
+            <Image
+              src="/images/24.jpg"
+              alt="Gallery 7"
+              width={600}
+              height={800}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/1.jpg"
+            />
+          </div>
+
+          <div>
+            <Image
+              src="/images/20.jpg"
+              alt="Gallery 8"
+              width={600}
+              height={400}
+              className="w-full h-72 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/3.jpg"
+            />
+          </div>
+
+          <div>
+            <Image
+              src="/images/26.jpeg"
+              alt="Gallery 9"
+              width={600}
+              height={400}
+              className="w-full h-72 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/hero.jpg"
+            />
+          </div>
+
+          <div className="col-span-2">
+            <Image
+              src="/images/32.jpg"
+              alt="Gallery 10"
+              width={1200}
+              height={600}
+              className="w-full h-96 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/hero.jpg"
+            />
+          </div>
+
+          <div>
+            <Image
+              src="/images/21.jpeg"
+              alt="Gallery 11"
+              width={600}
+              height={600}
+              className="w-full h-96 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/images/2.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+
+      <About/>
+
+    
+
+     
+  
     </div>
   );
 }
