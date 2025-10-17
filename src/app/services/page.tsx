@@ -19,7 +19,7 @@ export default function ServicesPage() {
     {
       title: "Hospitality",
       desc: "-RSVP - Rooms allocation - Check-ins - Tagging the luggage of guests - Assuring that luggage is placed in every guests room correctly - Placing hampers and itinerary in each guests room - Managing return gifts - Making call before every functions - To sort any room related queries of guests",
-      img: "/images/21.jpeg",
+      img: "/images/21.jpg",
     },
     {
       title: "Logistics",
@@ -49,7 +49,7 @@ export default function ServicesPage() {
 {
       title: "Production",
       desc: "Coordination with all vendors and execution.",
-      img: '/images/11.jpeg'
+      img: '/images/11.jpg'
     },
   ];
 
@@ -197,7 +197,7 @@ export default function ServicesPage() {
               title: "Event Management Services",
               date: "5th December",
               desc: "Discover our services live.",
-              img: "/images/11.jpeg",
+              img: "/images/11.jpg",
             },
             {
               title: "Corporate Gala Night",

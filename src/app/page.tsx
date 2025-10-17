@@ -56,9 +56,9 @@ export default function Home() {
       <Hero
         title="Relax & Celebrate: The Ultimate Event Experience"
         backgroundImages={[
-          "/images/12.JPG",
-          "/images/11.JPEG",
-          "/images/14.JPEG",
+          "/images/12.jpg",
+          "/images/11.jpg",
+          "/images/14.jpg",
         ]}
       />
 
@@ -269,7 +269,7 @@ export default function Home() {
 
           <div>
             <Image
-              src="/images/26.jpeg"
+              src="/images/26.jpg"
               alt="Gallery 9"
               width={600}
               height={400}
@@ -295,7 +295,7 @@ export default function Home() {
 
           <div>
             <Image
-              src="/images/21.jpeg"
+              src="/images/21.jpg"
               alt="Gallery 11"
               width={600}
               height={600}
