@@ -224,7 +224,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`bg-purple-600 text-white py-3 px-6 rounded-md hover:bg-purple-700 transition-colors ${
+                className={`bg-[#574656] text-white py-3 px-6 rounded-md hover:bg-[#574656] transition-colors ${
                   isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                 }`}
               >

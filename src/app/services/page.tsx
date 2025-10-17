@@ -72,10 +72,10 @@ export default function ServicesPage() {
         duration: 0.6,
         ease: [0.25, 0.1, 0.25, 1],
       }}
-      className={`relative rounded-2xl overflow-hidden shadow-lg bg-black/40 backdrop-blur-md border border-white/10 transition-all duration-500 w-full ${
-        index === 0 ? "mt-0" : "-mt-40"
-      }`}
-      style={{ zIndex: 10 + index }}
+    className={`relative rounded-2xl overflow-hidden shadow-lg bg-black/40 backdrop-blur-md border border-white/10 transition-all duration-500 w-full ${
+    index === 0 ? "mt-0" : "-mt-40"
+  }`}
+  style={{ zIndex: 10 + index }}
     >
       {/* Card Image */}
       <div className="relative w-full h-[400px]">
@@ -84,6 +84,8 @@ export default function ServicesPage() {
           alt={service.title}
           fill
           className="object-cover"
+              quality={60} // reduces image size
+    priority={index === 0} // preload first 3 images
         />
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
@@ -95,7 +97,7 @@ export default function ServicesPage() {
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true, amount: 0.5 }} 
             transition={{ delay: 0.1, duration: 0.4 }}
             className="text-3xl font-bold mb-2"
 

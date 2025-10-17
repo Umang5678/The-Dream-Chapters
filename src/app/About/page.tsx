@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+
 
 export default function AboutPage() {
   return (
@@ -35,22 +37,27 @@ export default function AboutPage() {
 
             {/* Image Section */}
             <div className="flex justify-center md:justify-end">
-              <img
-                src="/images/24.jpg"
-                alt="Our Story"
-                className="rounded-2xl shadow-lg object-cover w-full max-w-md md:max-w-lg"
-              />
+           <Image
+  src="/images/24.jpg"
+  alt="Our Story"
+  width={600}
+  height={400}
+  className="rounded-2xl shadow-lg object-cover"
+/>
             </div>
           </section>
 
           {/* Our Mission */}
           <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Image first on mobile */}
-            <img
-              src="/images/12.jpg"
-              alt="Our Mission"
+             <Image
+    src="/images/12.jpg"
+    alt="Our Mission"
+
+     width={600}
+  height={400}
               className="rounded-lg w-full h-64 md:h-96 object-cover order-1 md:order-none"
-            />
+  />
 
             <div>
               <h2 className="text-3xl md:text-5xl  mb-6 text-black relative after:block after:w-full after:h-1 after:bg-[#92657e] after:mt-2"
