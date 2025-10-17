@@ -86,17 +86,17 @@ export default function Home() {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {[
         {
-          title: "Social Event",
+          title: "Social Events",
           desc: "Wedding, Birthday, Baby Shower, Anniversary, House Warming, Reunion Party, Festival Celebration and much more...",
           img: "/images/31.jpg",
         },
         {
-          title: "Corporate Event",
+          title: "Corporate Events",
           desc: "Conference, Product Launch, Exhibition, Dealer Meet, Motivational Activity, Award Function, and much more...",
           img: "/images/30.jpg",
         },
         {
-          title: "Wedding",
+          title: "Weddings",
           desc: "Destination Wedding, Ring Ceremony, Reception, Haldi, Bachelor Party, Sangeet Sandhya, Mayra, and much more...",
           img: "/images/32.jpg",
         },
