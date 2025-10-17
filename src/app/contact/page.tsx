@@ -65,22 +65,22 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div>
             <h2
-              className="text-2xl font-bold mb-5 text-black"
-              style={{
-                fontFamily:
-                  "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif",
-                fontWeight: 100,
-              }}
-            >
-              Contact us about anything related to our company or services.
-              We'll do our best to get back to you as soon as possible.
-            </h2>
+  className="text-2xl font-bold mb-5 text-black"
+  style={{
+    fontFamily:
+      "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif",
+    fontWeight: 100,
+  }}
+>
+  Contact us about anything related to our company or services.
+  We&apos;ll do our best to get back to you as soon as possible.
+</h2>
 
             {submitSuccess && (
-              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-                Thank you for your message! We'll get back to you shortly.
-              </div>
-            )}
+  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+    Thank you for your message! We&apos;ll get back to you shortly.
+  </div>
+)}
 
             <form
               onSubmit={handleSubmit}

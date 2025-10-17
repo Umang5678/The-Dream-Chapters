@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EventMaster - Professional Event Management",
+  title: "The Dream Chapters",
   description: "Your premier event planning and management service",
 };
 
