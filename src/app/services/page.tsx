@@ -7,14 +7,19 @@ import { motion } from "framer-motion";
 export default function ServicesPage() {
   const topServices = [
     {
+      title: "Venue Selection",
+      desc: "Will be helping in searching the venue suitable to our needs and budget friendly.",
+      img: "/images/32.jpg",
+    },
+    {
       title: "Planning",
       desc: "It includes all the decision making part be it the selection of decor designs, vendors, artists, agencies and every other things which are going to be involved throughout our event.",
       img: "/images/36.jpg",
     },
     {
-      title: "Venue Selection",
-      desc: "Will be helping in searching the venue suitable to our needs and budget friendly.",
-      img: "/images/32.jpg",
+      title: "Vendor Sourcing",
+      desc: "Providing each vendor and agency needed with suitable options.",
+      img: "/images/38.jpg",
     },
     {
       title: "Hospitality",
@@ -27,24 +32,19 @@ export default function ServicesPage() {
       img: "/images/28.jpg",
     },
     {
-      title: "Vendor Sourcing",
-      desc: "Providing each vendor and agency needed with suitable options.",
-      img: "/images/38.jpg",
-    },
-    {
       title: "Food & Beverages",
       desc: "- Help you in selecting the best suitable caterers On day of execution: - Plate counts - Proper refilling of food - Manage rolling live counters - Taking count of extra plates if needed - managing sajjangoth",
       img: "/images/30.jpg",
     },
     {
-      title: "Client Service Management",
-      desc: "Shadows will be provided to manage things you ask them for.",
-      img: "/images/37.jpg",
-    },
-    {
       title: "Artist Management",
       desc: "Managing artists’ every need during the event.",
       img: '/images/35.jpg'
+    },
+    {
+      title: "Client Servicing",
+      desc: "Shadows will be provided to manage things you ask them for.",
+      img: "/images/37.jpg",
     },
 {
       title: "Production",
@@ -157,23 +157,28 @@ export default function ServicesPage() {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-left text-sm text-white/90">
       {[
         "Event Concept",
-        "Social Activations",
+        'Venue Selection',
+        "Vendor Sourcing",
+        'Hospitality',
         "Logistics Management",
-        "Entry Concept",
-        "Catering Services",
-        "Balloon Decoration",
-        "3D Event Setup",
-        "Man Power",
-        "Special Effects",
-        "Venue Sourcing",
-        "Budget Management",
-        "AV Equipments",
-        "Photography & Videography",
-        "Artist Management",
-        "Theme Decoration",
-        "Light Setup",
-        "Stage Layout",
-        "Invitation Cards",
+        "Theme Decor",
+        'Food and Beverages',
+        "Technical Equipments",
+        "Artists",
+        "Photography",
+        'Fireworks and SFX',
+        'Choreography',
+        // "Social Activations",
+        // "Entry Concept",
+        // "Catering Services",
+        // "Balloon Decoration",
+        // "3D Event Setup",
+        // "Man Power",
+        // "Special Effects",
+        // "Budget Management",
+        // "Light Setup",
+        // "Stage Layout",
+        // "Invitation Cards",
       ].map((service, index) => (
         <div key={index} className="flex items-start gap-2">
           <span className="text-blue-200">✦</span>
