@@ -38,7 +38,7 @@ export default function AboutPage() {
             {/* Image Section */}
             <div className="flex justify-center md:justify-end">
            <Image
-  src="/images/24.jpg"
+  src="/images/37.jpg"
   alt="Our Story"
   width={600}
   height={400}
@@ -51,7 +51,7 @@ export default function AboutPage() {
           <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Image first on mobile */}
              <Image
-    src="/images/12.jpg"
+    src="/images/11.jpg"
     alt="Our Mission"
 
      width={600}

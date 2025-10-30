@@ -216,7 +216,7 @@ export default function ServicesPage() {
               title: "Wedding Planning Services",
               date: "15th October",
               desc: "Annual Event Showcase.",
-              img: "/images/12.jpg",
+              img: "/images/32.jpg",
             },
           ].map((event, index) => (
             <div

@@ -56,7 +56,7 @@ export default function Home() {
       <Hero
         title="Relax & Celebrate: The Ultimate Event Experience"
         backgroundImages={[
-          "/images/12.jpg",
+          "/images/36.jpg",
           "/images/11.jpg",
           "/images/14.jpg",
         ]}
@@ -178,7 +178,7 @@ export default function Home() {
 
           <div>
             <Image
-              src="/images/16.jpg"
+              src="/images/31.jpg"
               alt="Gallery 2"
               width={600}
               height={400}
@@ -204,7 +204,7 @@ export default function Home() {
 
           <div className="col-span-2">
             <Image
-              src="/images/17.jpg"
+              src="/images/38.jpg"
               alt="Gallery 4"
               width={1200}
               height={600}
@@ -230,7 +230,7 @@ export default function Home() {
 
           <div>
             <Image
-              src="/images/19.jpg"
+              src="/images/21.jpg"
               alt="Gallery 6"
               width={600}
               height={500}
@@ -256,7 +256,7 @@ export default function Home() {
 
           <div>
             <Image
-              src="/images/20.jpg"
+              src="/images/36.jpg"
               alt="Gallery 8"
               width={600}
               height={400}

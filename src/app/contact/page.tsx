@@ -101,8 +101,8 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md 
-             focus:outline-none focus:ring-2 focus:ring-purple-600 
-             focus:border-purple-600 shadow-sm"
+             focus:outline-none focus:ring-2 focus:ring-[#574656]
+            focus:ring-[#574656]shadow-sm"
                   />
                 </div>
                 <div>
@@ -115,8 +115,8 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md 
-             focus:outline-none focus:ring-2 focus:ring-purple-600 
-             focus:border-purple-600 shadow-sm"
+             focus:outline-none focus:ring-2 focus:ring-[#574656]
+         shadow-sm"
                   />
                 </div>
               </div>
@@ -131,8 +131,8 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md 
-             focus:outline-none focus:ring-2 focus:ring-purple-600 
-             focus:border-purple-600 shadow-sm"
+             focus:outline-none focus:ring-2 focus:ring-[#574656]
+      shadow-sm"
                   />
                 </div>
                 <div>
@@ -143,14 +143,14 @@ export default function ContactPage() {
                     value={formData.city}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md 
-             focus:outline-none focus:ring-2 focus:ring-purple-600 
-             focus:border-purple-600 shadow-sm"
+           focus:outline-none focus:ring-2focus:ring-[#574656]
+           focus:ring-[#574656] shadow-sm"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-gray-700 mb-2  focus:ring-purple-600 ">
+                <label className="block text-gray-700 mb-2   focus:ring-[#574656] ">
                   Venue
                 </label>
                 <input
@@ -159,8 +159,8 @@ export default function ContactPage() {
                   value={formData.venue}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md 
-             focus:outline-none focus:ring-2 focus:ring-purple-600 
-             focus:border-purple-600 shadow-sm"
+          focus:outline-none focus:ring-2  focus:ring-[#574656]
+           shadow-sm"
                 />
               </div>
 
@@ -174,8 +174,8 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white shadow-sm 
-             text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-600 
-             focus:border-purple-600 transition duration-200 ease-in-out"
+             text-gray-800 focus:outline-none focus:ring-2  focus:ring-[#574656]
+           transition duration-200 ease-in-out"
                 >
                   <option value="">Select</option>
                   <option value="engagement">Engagement</option>
@@ -216,8 +216,8 @@ export default function ContactPage() {
                   rows={4}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-md 
-             focus:outline-none focus:ring-2 focus:ring-purple-600 
-             focus:border-purple-600 shadow-sm"
+             focus:outline-none focus:ring-2 focus:ring-[#574656]
+          shadow-sm"
                 />
               </div>
 

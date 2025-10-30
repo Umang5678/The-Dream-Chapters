@@ -15,40 +15,47 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ title, backgroundImages, subtitle }) => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false, // hide arrows
+    arrows: false,
+    fade: true, // smooth crossfade between images
   };
 
   return (
-    <div className="relative min-h-screen">
-      <Slider {...settings}>
-        {backgroundImages.map((img, i) => (
-          <div key={i}>
-            <div
-              className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-              style={{ backgroundImage: `url(${img})` }}
-            >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50" />
-
-              {/* Content */}
-              <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-                <h1
-                  className="text-4xl md:text-6xl font-playfair text-white mb-6"
-                  style={{ fontFamily: "playfair" }}
-                >
-                  {title}
-                </h1>
-              </div>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Slider background only */}
+      <div className="absolute inset-0 z-0">
+        <Slider {...settings}>
+          {backgroundImages.map((img, i) => (
+            <div key={i}>
+              <div
+                className="min-h-screen bg-cover bg-center"
+                style={{ backgroundImage: `url(${img})` }}
+              ></div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
+
+      {/* Static title (not sliding) */}
+      <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+        <h1
+          className="text-4xl md:text-6xl font-playfair text-white mb-4"
+          style={{ fontFamily: "Playfair Display" }}
+        >
+          {title}
+        </h1>
+        {subtitle && (
+          <p className="text-lg md:text-2xl text-gray-200">{subtitle}</p>
+        )}
+      </div>
     </div>
   );
 };
